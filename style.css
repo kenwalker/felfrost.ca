@@ -1,0 +1,214 @@
+/*-----------------------------------------------------------------------------------*/
+/*	    
+/*      Built with blocs
+/*-----------------------------------------------------------------------------------*/
+
+body{
+	margin:0;
+	padding:0;
+    background:#FFF;
+    -webkit-font-smoothing: antialiased;
+}
+a:hover{text-decoration: none;}
+
+
+/* Globals type styling */
+
+h1,h2,h3,h4,h5,h6,p,label,.btn,a{
+	font-family:"Helvetica";
+}
+
+/* Site container width */
+
+.container{
+	max-width:1170px;
+}
+
+/* Blocs */
+
+.bloc{
+	width:100%;
+	background: 50% 50% no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+/* Bloc sizes */
+
+.bloc-lg{
+	padding:100px 0;
+}
+.bloc-sm{
+	padding:20px 0;
+}
+
+
+/* Bloc - Light theme */
+
+.l-bloc{
+	color:rgba(0,0,0,.5);
+}
+.l-bloc button:hover{
+	color:rgba(0,0,0,.7);
+}
+.l-bloc h1,.l-bloc h2,.l-bloc h3,.l-bloc h4,.l-bloc h5, .l-bloc h6, .l-bloc .ico{
+	color:rgba(0,0,0,.7);
+}
+.l-bloc .icon-round{
+	border-color:rgba(0,0,0,.7);
+}
+.l-bloc .divider-h span{
+	border-color:rgba(0,0,0,.1);
+}
+.l-bloc a{
+	color:rgba(0,0,0,.6);
+}
+.l-bloc a:hover{
+	color:rgba(0,0,0,1);
+}
+.l-bloc .navbar-toggle .icon-bar{
+	color:rgba(0,0,0,.6);
+}
+.l-bloc .btn-wire, .l-bloc .btn-wire:hover{
+	color:rgba(0,0,0,.7);
+	border-color:rgba(0,0,0,.3);
+}
+
+
+/* Custom bloc styling */
+
+#nav-bloc,#bloc-1,#bloc-2,#bloc-3{
+	background-color:#FFF;
+}
+
+
+/* NavBar */
+
+.navbar{
+	margin-bottom: 0;
+}
+.navbar-brand{
+	font-size: 25px;
+	font-weight: normal;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 600;
+}
+.navbar-brand img{
+	width: auto;
+	max-height: 40px;
+	margin: -12px 5px 0 0;
+}
+.navbar-brand{
+	padding: 15px 15px;
+}
+.navbar .nav{
+	padding-top: 2px;
+	margin-right: -16px;
+	float:right;
+}
+.nav > li{
+	float: left;
+	margin-top: 4px;
+	font-size: 16px;
+}
+.nav > li a:hover{
+	background:transparent;
+}
+.navbar-toggle{
+	margin: 12px;
+	border: 0px;
+}
+.navbar-toggle:hover{
+	background:transparent!important;
+}
+.navbar-toggle .icon-bar{
+	background-color: rgba(0,0,0,.5);
+	width: 26px;
+}
+
+/* Bric adjustment margins */
+
+.mg-md{
+	margin-top:10px;
+	margin-bottom:20px;
+}
+
+/* Buttons */
+
+.btn{
+	margin: 0 5px 5px 0;
+}
+.btn.pull-right{
+	margin: 0 0 5px 5px;
+}
+.btn-d,.btn-d:hover,.btn-d:focus{
+	color:#FFF!important;
+	background:rgba(0,0,0,.3);
+}
+.a-btn{
+	font-size: 14px;
+	font-weight: normal;
+	padding: 6px 10px 6px 0;
+	line-height: 1.42857143;
+	 display:inline-block;
+}
+.a-block{
+	width:100%;
+	text-align: left;
+}
+
+
+
+/* Icons */
+.icon-md{
+	font-size:30px!important;
+}
+
+
+
+
+
+
+/* Mobile adjustments */
+
+@media (max-width: 768px)
+{
+    .bloc{
+        text-align: center;
+        -webkit-background-size: auto 200%;
+        -moz-background-size: auto 200%;
+        -o-background-size: auto 200%;
+        background-size: auto 200%;
+    }
+    .navbar .nav{
+        padding-top: 0;
+        border-top:1px solid rgba(0,0,0,.2);
+        float:none!important;
+    }
+    .nav > li{
+        margin-top: 0;
+        border-bottom:1px solid rgba(0,0,0,.1);
+        background:rgba(0,0,0,.05);
+        text-align: left;
+        width:100%;
+    }
+    .nav > li:hover{
+        background:rgba(0,0,0,.08);
+    }
+    .navbar-collapse{
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .btn.pull-left, .btn.pull-right{
+       float:none!important; 
+    }
+    .bloc-xl,.bloc-lg{
+        padding: 40px 0;
+    }
+    .a-block{
+        text-align: center;
+    }
+}
