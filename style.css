@@ -77,8 +77,12 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 
 /* Custom bloc styling */
 
-#nav-bloc,#bloc-1,#officers-1,#bloc-3{
-	background-color:#FFF;
+#nav-bloc,#bloc-1,#bloc-2,#bloc-3,#bloc-4,#bloc-5,#officers-1,#bloc-7{
+	background-color:#ffffff;
+}
+#bloc-4 p{
+}
+#officers-1 h3{
 }
 
 
@@ -128,9 +132,20 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 
 /* Bric adjustment margins */
 
+.mg-clear{
+	margin:0;
+}
+.mg-sm{
+	margin-top:10px;
+	margin-bottom:5px;
+}
 .mg-md{
 	margin-top:10px;
 	margin-bottom:20px;
+}
+.mg-lg{
+	margin-top:10px;
+	margin-bottom:40px;
 }
 
 /* Buttons */
@@ -159,6 +174,28 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 
 
 
+/* Icons */
+.icon-md{
+	font-size:30px!important;
+}
+.icon-round{
+	margin:0 auto;
+	border:2px solid transparent;
+	border-radius: 50%;
+	padding: 32px 30px 26px 30px;
+}
+.icon-round.icon-sm{
+	min-width:80px;
+}
+.icon-round.icon-md{
+	min-width:92px;
+}
+.icon-round.icon-lg{
+	min-width:122px;
+}
+.icon-round.icon-xl{
+	min-width:162px;
+}
 
 
 /* Image frame */
