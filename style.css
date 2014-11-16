@@ -38,9 +38,6 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 
 /* Bloc sizes */
 
-.bloc-lg{
-	padding:100px 0;
-}
 .bloc-sm{
 	padding:20px 0;
 }
@@ -80,7 +77,7 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 
 /* Custom bloc styling */
 
-#nav-bloc,#bloc-1,#bloc-2,#bloc-3{
+#nav-bloc,#bloc-1,#officers-1,#bloc-3{
 	background-color:#FFF;
 }
 
@@ -162,12 +159,23 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 
 
 
-/* Icons */
-.icon-md{
-	font-size:30px!important;
+
+
+/* Image frame */
+.img-frame,.img-frame-md,.img-frame-lg,.img-frame-rd,.img-frame-rd-md,.img-frame-rd-lg{
+	background:#FFF;
+	box-shadow: 0 0 1px rgba(0,0,0,0.4),0 2px 2px rgba(0,0,0,0.05);
+	padding:4px;
 }
-
-
+.img-frame,.img-frame-md,.img-frame-lg{
+	border-radius:3px;
+}
+.img-frame-md,.img-frame-rd-md{
+	padding:8px;
+}
+.img-frame-lg,.img-frame-rd-lg{
+	padding:14px;
+}
 
 
 
