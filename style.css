@@ -130,15 +130,17 @@ a:hover{text-decoration: none;}
 	margin-bottom: 0;
 }
 .navbar-brand{
-	font-size: 25px;
-	font-weight: normal;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 600;
+	height:auto;
+	padding:15px 15px;
+	font-size:25px;
+	font-weight:normal;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:600;
 }
 .navbar-brand img{
 	width: auto;
-	max-height: 40px;
-	margin: -12px 5px 0 0;
+	max-height: 200px;
+	margin: 0 5px 0 0;
 }
 .navbar-brand{
 	padding: 15px 15px;
@@ -149,11 +151,11 @@ a:hover{text-decoration: none;}
 	float:right;
 }
 .nav > li{
-	float: left;
-	margin-top: 4px;
-	font-size: 16px;
+	float:left;
+	margin-top:4px;
+	font-size:16px;
 }
-.nav > li a:hover{
+.nav > li a:hover, .nav > li a:focus{
 	background:transparent;
 }
 .navbar-toggle{
@@ -167,7 +169,15 @@ a:hover{text-decoration: none;}
 	background-color: rgba(0,0,0,.5);
 	width: 26px;
 }
-
+ @media (min-width: 768px){
+	.site-navigation{
+	position: absolute;
+	 top: 50%;
+	 right:20px;
+	transform: translate(0, -50%);
+	-webkit-transform:translateY(-50%);
+}
+}
 /* Bric adjustment margins */
 
 .mg-clear{
@@ -286,6 +296,12 @@ a:hover{text-decoration: none;}
         border-top:1px solid rgba(0,0,0,.2);
         float:none!important;
     }
+    .site-navigation{
+	   position:inherit;
+	   transform:none;
+	   -webkit-transform:none;
+	   -ms-transform:none;
+    }  
     .nav > li{
         margin-top: 0;
         border-bottom:1px solid rgba(0,0,0,.1);
@@ -300,6 +316,10 @@ a:hover{text-decoration: none;}
         padding:0;
         -webkit-box-shadow: none;
         box-shadow: none;
+    }
+    .navbar-brand img{
+        max-height: 40px;
+        margin: -10px 5px 0 0;
     }
     .btn.pull-left, .btn.pull-right{
        float:none!important; 
