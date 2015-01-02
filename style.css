@@ -112,7 +112,7 @@ a:hover{text-decoration: none;}
 
 /* Custom bloc styling */
 
-#nav-bloc,#bloc-1,#bloc-4,#bloc-5,#bloc-7,#bloc-10,#bloc-11,#bloc-13,#bloc-16,#bloc-18,#bloc-19{
+#nav-bloc,#bloc-1,#bloc-4,#bloc-5,#bloc-7,#bloc-10,#bloc-11,#bloc-13,#bloc-16,#bloc-18,#bloc-19,#bloc-20{
 	background-color:#ffffff;
 }
 #bloc-2,#bloc-3,#bloc-6,#officers-1,#bloc-9,#bloc-12,#bloc-14,#bloc-15,#bloc-17,#footer{
@@ -159,7 +159,7 @@ a:hover{text-decoration: none;}
 	background:transparent;
 }
 .navbar-toggle{
-	margin: 12px;
+	margin: 10px 0 0 0;
 	border: 0px;
 }
 .navbar-toggle:hover{
@@ -178,6 +178,7 @@ a:hover{text-decoration: none;}
 	-webkit-transform:translateY(-50%);
 }
 }
+
 /* Bric adjustment margins */
 
 .mg-clear{
@@ -211,12 +212,23 @@ a:hover{text-decoration: none;}
 	line-height: 1.42857143;
 	 display:inline-block;
 }
+.text-center .a-btn{
+	padding: 6px 0;
+}
 .a-block{
 	width:100%;
 	text-align: left;
 }
 
 
+/* Link colour styles */
+
+.ltc-2{
+	color:#004581!important;
+}
+.ltc-2:hover{
+	color:#003767!important;
+}
 
 /* Icons */
 .icon-md{
@@ -280,7 +292,7 @@ a:hover{text-decoration: none;}
     .page-container{
         overflow-x: hidden;
     }
-    .container{
+    h1,h2,h3,h4,h5,h6,p{
         padding-left:5px!important; 
         padding-right:5px!important; 
     }
@@ -295,6 +307,10 @@ a:hover{text-decoration: none;}
         padding-top: 0;
         border-top:1px solid rgba(0,0,0,.2);
         float:none!important;
+    }
+    .navbar.row{
+        margin-left: 0;
+        margin-right: 0;
     }
     .site-navigation{
 	   position:inherit;
@@ -314,12 +330,14 @@ a:hover{text-decoration: none;}
     }
     .navbar-collapse{
         padding:0;
+        overflow-x: hidden;
         -webkit-box-shadow: none;
         box-shadow: none;
     }
     .navbar-brand img{
         max-height: 40px;
-        margin: -10px 5px 0 0;
+        width:auto;
+        margin: -10px 5px 0 0;    
     }
     .btn.pull-left, .btn.pull-right{
        float:none!important; 
