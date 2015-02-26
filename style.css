@@ -9,7 +9,10 @@ body{
     background:#FFF;
     -webkit-font-smoothing: antialiased;
 }
-a:hover{text-decoration: none;}
+a:hover{text-decoration: none; cursor:pointer;}
+
+
+   
 
 
 /* Globals type styling */
@@ -134,7 +137,6 @@ a:hover{text-decoration: none;}
 	padding:15px 15px;
 	font-size:25px!important;
 	font-weight:normal;
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight:600;
 }
 .navbar-brand img{
@@ -324,6 +326,9 @@ iframe{
         -moz-background-size: auto 200%;
         -o-background-size: auto 200%;
         background-size: auto 200%;
+    }
+    .b-parallax{
+        background-attachment:scroll;
     }
     .navbar .nav{
         padding-top: 0;
