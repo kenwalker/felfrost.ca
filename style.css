@@ -1,12 +1,13 @@
 /*-----------------------------------------------------------------------------------*/
 /*	    Duchy of Felfrost in Ottawa - Amtgard
-/*      Built with blocs
+/*      Built with Blocs
 /*-----------------------------------------------------------------------------------*/
 
 body{
 	margin:0;
 	padding:0;
     background:#FFF;
+    overflow-x:hidden;
     -webkit-font-smoothing: antialiased;
 }
 a:hover{text-decoration: none; cursor:pointer;}
@@ -31,7 +32,10 @@ a:hover{text-decoration: none; cursor:pointer;}
 
 .bloc{
 	width:100%;
+	clear:both;
 	background: 50% 50% no-repeat;
+	padding;
+	0 50px;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -42,10 +46,10 @@ a:hover{text-decoration: none; cursor:pointer;}
 /* Bloc sizes */
 
 .bloc-md{
-	padding:50px 0;
+	padding:50px;
 }
 .bloc-sm{
-	padding:20px 0;
+	padding:20px 50px;
 }
 
 
@@ -115,7 +119,7 @@ a:hover{text-decoration: none; cursor:pointer;}
 
 /* Custom bloc styling */
 
-#nav-bloc,#bloc-1,#bloc-4,#bloc-5,#bloc-7,#bloc-10,#bloc-11,#bloc-13,#bloc-16,#bloc-18,#bloc-19,#bloc-20{
+#nav-bloc,#bloc-1,#bloc-4,#bloc-5,#bloc-7,#bloc-10,#bloc-11,#bloc-13,#bloc-16,#bloc-18,#bloc-19,#bloc-20,#bloc-21{
 	background-color:#ffffff;
 }
 #bloc-2,#bloc-3,#bloc-6,#officers-1,#bloc-9,#bloc-12,#bloc-14,#bloc-15,#bloc-17,#footer{
@@ -140,7 +144,6 @@ a:hover{text-decoration: none; cursor:pointer;}
 	font-weight:600;
 }
 .navbar-brand img{
-	width: auto;
 	max-height: 200px;
 	margin: 0 5px 0 0;
 	display:inline;
@@ -162,7 +165,7 @@ a:hover{text-decoration: none; cursor:pointer;}
 	background:transparent;
 }
 .navbar-toggle{
-	margin: 10px 0 0 0;
+	margin: 10px 10px 0 0;
 	border: 0px;
 }
 .navbar-toggle:hover{
@@ -180,18 +183,18 @@ a:hover{text-decoration: none; cursor:pointer;}
 .nav-invert .navbar-header, .nav-invert .navbar-brand{
 	float:right;
 }
- @media (min-width: 768px){
+@media (min-width: 768px){
 	.site-navigation{
-	position: absolute;
-	 top: 50%;
-	 right:20px;
-	transform: translate(0, -50%);
-	-webkit-transform:translateY(-50%);
-}
-.nav-invert .site-navigation{
-	left:20px;
-	right:0;
-}
+		position:absolute;
+		top:50%;
+		right:20px;
+		transform:translate(0, -50%);
+		-webkit-transform:translateY(-50%);
+	}
+	.nav-invert .site-navigation{
+		left:20px;
+		right:0;
+	}
 }
 
 /* Bric adjustment margins */
@@ -239,10 +242,10 @@ a:hover{text-decoration: none; cursor:pointer;}
 /* Link colour styles */
 
 .ltc-2{
-	color:#004581!important;
+	color:#ffffff!important;
 }
 .ltc-2:hover{
-	color:#003767!important;
+	color:#cccccc!important;
 }
 
 /* Icons */
@@ -302,11 +305,30 @@ a:hover{text-decoration: none; cursor:pointer;}
 .empty-column.thin{
 	height:150px;
 }
-/*iFrame*/
+/* iFrame */
 
 iframe{
 	border:0;
 }
+/* Carousel */
+
+.carousel-control span{
+	position: absolute;
+	top: 50%;
+	z-index: 5;
+	display: inline-block;
+}
+.carousel-control{
+	color:#FFF!important;
+	text-shadow: none;
+}
+.carousel-indicators li{
+	margin: 0 4px;
+}
+.carousel-indicators .active{
+	margin: 0 4px -1px;
+}
+
 
 
 /* Mobile adjustments */
@@ -317,11 +339,22 @@ iframe{
         overflow-x: hidden;
     }
     h1,h2,h3,h4,h5,h6,p{
-        padding-left:5px!important; 
-        padding-right:5px!important; 
+        padding-left:10px!important; 
+        padding-right:10px!important; 
+    }
+    #hero-bloc h1{
+        font-size:40px;
+    }
+    #hero-bloc h2{
+        font-size:34px;
+    }
+    #hero-bloc h3{
+        font-size:25px;
     }
     .bloc{
         text-align: center;
+        padding-left: 0; 
+        padding-right: 0;
         -webkit-background-size: auto 200%;
         -moz-background-size: auto 200%;
         -o-background-size: auto 200%;
@@ -355,6 +388,16 @@ iframe{
     .nav > li:hover{
         background:rgba(0,0,0,.08);
     }
+    #hero-bloc .navbar .nav{
+        background:rgba(0,0,0,.8);
+    }
+    #hero-bloc .navbar .nav a{
+        color:rgba(255,255,255,.6);
+    }
+    .hero-nav{
+	   left:-1px;
+	   right:-1px;
+    }
     .navbar-collapse{
         padding:0;
         overflow-x: hidden;
@@ -364,7 +407,7 @@ iframe{
     .navbar-brand img{
         max-height: 40px;
         width:auto;
-        margin: -10px 5px 0 0;    
+        margin: -10px 10px 0 0;    
     }
     .nav-invert .navbar-header{
         float: none;
@@ -376,13 +419,29 @@ iframe{
     .btn.pull-left, .btn.pull-right{
        float:none!important; 
     }
+    .bloc-group .bloc{
+         display:block;
+         width:100%;
+     }
+    .bloc-tile-2 .container, .bloc-tile-3 .container, .bloc-tile-4 .container{
+	   padding-left: 10px;
+	   padding-right: 10px;
+    }
     .bloc-xl,.bloc-lg{
         padding: 40px 0;
+    }
+    .bloc-sm,.bloc-md{
+        padding-left: 0; 
+        padding-right: 0;
     }
     .a-block{
         text-align: center;
     }
     .btn-dwn{
        display:none; 
+    }
+    .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 }
