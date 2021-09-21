@@ -37,7 +37,7 @@ function insertParkDays() {
                     var nextEvent = eventList.shift();
                     jsork.event.getEventDetail(nextEvent.EventId).then(function(eventDetails) {
                         if (eventDetails.length > 0) {
-                            var eventDate = new Date(eventDetails[0].EventStart.split(' '));
+                            var eventDate = new Date(eventDetails[0].EventStart.split(' ')[0]);
                             var kingdomEventLine = '<tr>';
                             kingdomEventLine += '<td><a target="_new" href="https://ork.amtgard.com/orkui/index.php?Route=Event/index/' + nextEvent.EventId + '">' + nextEvent.Name + '</a></td>';
                             kingdomEventLine += '<td>' + nextEvent.ParkName + '</td>';
