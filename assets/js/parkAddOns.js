@@ -1,5 +1,6 @@
 var showParkDays = true;
 var showKingdomEvents = true;
+var showOfficers = true;
 var parkID = 277;
 var kingdomID = 31;
 var dateFormat = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -30,20 +31,23 @@ function insertParkDays() {
  */
  function insertKingdomEvents() {
     jsork.searchservice.searchKingdomEvent(kingdomID, "").then(function(kingdomEvents) {
+         $('#showkingdomevents').attr('hidden', true);
          if (kingdomEvents.length > 0) {
-            $('#showkingdomevents').attr('hidden', false);
             function addNextEvent(eventList) {
                 if (eventList.length > 0) {
                     var nextEvent = eventList.shift();
                     jsork.event.getEventDetail(nextEvent.EventId).then(function(eventDetails) {
                         if (eventDetails.length > 0) {
                             var eventDate = new Date(eventDetails[0].EventStart.split(' ')[0]);
-                            var kingdomEventLine = '<tr>';
-                            kingdomEventLine += '<td><a target="_new" href="https://ork.amtgard.com/orkui/index.php?Route=Event/index/' + nextEvent.EventId + '">' + nextEvent.Name + '</a></td>';
-                            kingdomEventLine += '<td>' + nextEvent.ParkName + '</td>';
-                            kingdomEventLine += '<td>' + eventDate.toLocaleString('en-US',dateFormat) + '</td>';
-                            kingdomEventLine += '</tr>';
-                            $('#kingdomevents').append(kingdomEventLine);
+                            if (eventDate >= new Date()) {
+                                $('#showkingdomevents').attr('hidden', false);
+                                var kingdomEventLine = '<tr>';
+                                kingdomEventLine += '<td><a target="_new" href="https://ork.amtgard.com/orkui/index.php?Route=Event/index/' + nextEvent.EventId + '">' + nextEvent.Name + '</a></td>';
+                                kingdomEventLine += '<td>' + nextEvent.ParkName + '</td>';
+                                kingdomEventLine += '<td>' + eventDate.toLocaleString('en-US',dateFormat) + '</td>';
+                                kingdomEventLine += '</tr>';
+                                $('#kingdomevents').append(kingdomEventLine);
+                            }
                         }
                         addNextEvent(eventList);
                     });
@@ -53,6 +57,27 @@ function insertParkDays() {
          }
     });
 }
+
+/**
+ * Insert the list of park officers into the table element with ID "officers"
+ * The DIV "showofficers" will be unhidden.
+ */
+ function insertOfficers() {
+    jsork.park.getOfficers(parkID).then(function(officers) {
+        if (officers.length > 0) {
+            $('#showOfficers').attr('hidden', false);
+            parkDays.forEach(function(anEvent) {
+                var parkDayLine = '<tr>';
+                parkDayLine += '<td>' + anEvent.WeekDay + '</td>';
+                parkDayLine += '<td>' + anEvent.Time + '</td>';
+                parkDayLine += '<td><a target="_new" href="' + anEvent.MapUrl + '">' + anEvent.Address + '</a></td>';
+                parkDayLine += '</tr>';
+                $('#parkdays').append(parkDayLine);
+            });
+        }
+    });
+}
+
 
 function startUp() {
     if (showParkDays) {
