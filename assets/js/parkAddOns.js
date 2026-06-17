@@ -41,8 +41,9 @@ function insertParkDays() {
                             var eventDate = new Date(eventDetails[0].EventStart.split(' ')[0]);
                             if (eventDate >= new Date()) {
                                 $('#showkingdomevents').attr('hidden', false);
+                                var calendarDetailId = eventDetails[0].EventCalendarDetailId;
                                 var kingdomEventLine = '<tr>';
-                                kingdomEventLine += '<td><a target="_new" href="https://ork.amtgard.com/orkui/index.php?Route=Event/index/' + nextEvent.EventId + '">' + nextEvent.Name + '</a></td>';
+                                kingdomEventLine += '<td><a target="_new" href="https://ork.amtgard.com/orkui/index.php?Route=Event/detail/' + nextEvent.EventId + '/' + calendarDetailId + '">' + nextEvent.Name + '</a></td>';
                                 kingdomEventLine += '<td>' + nextEvent.ParkName + '</td>';
                                 kingdomEventLine += '<td>' + eventDate.toLocaleString('en-US',dateFormat) + '</td>';
                                 kingdomEventLine += '</tr>';
