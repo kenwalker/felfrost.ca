@@ -17,7 +17,7 @@ function insertParkDays() {
                 var parkDayLine = '<tr>';
                 parkDayLine += '<td>' + anEvent.WeekDay + '</td>';
                 parkDayLine += '<td>' + anEvent.Time + '</td>';
-                parkDayLine += '<td><a target="_new" href="' + anEvent.MapUrl + '">' + anEvent.Address + '</a></td>';
+                parkDayLine += '<td>' + (anEvent.Address ? '<a target="_new" href="' + anEvent.MapUrl + '">' + anEvent.Address + '</a>' : '') + '</td>';
                 parkDayLine += '</tr>';
                 $('#parkdays').append(parkDayLine);
             });
@@ -44,7 +44,7 @@ function insertParkDays() {
                                 var calendarDetailId = eventDetails[0].EventCalendarDetailId;
                                 var kingdomEventLine = '<tr>';
                                 kingdomEventLine += '<td><a target="_new" href="https://ork.amtgard.com/orkui/index.php?Route=Event/detail/' + nextEvent.EventId + '/' + calendarDetailId + '">' + nextEvent.Name + '</a></td>';
-                                kingdomEventLine += '<td>' + nextEvent.ParkName + '</td>';
+                                kingdomEventLine += '<td>' + (nextEvent.ParkName || '') + '</td>';
                                 kingdomEventLine += '<td>' + eventDate.toLocaleString('en-US',dateFormat) + '</td>';
                                 kingdomEventLine += '</tr>';
                                 $('#kingdomevents').append(kingdomEventLine);
